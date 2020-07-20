@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <cards-grid />
+    <router-view/>
   </div>
 </template>
 
 <script>
-  import CardsGrid from './views/CardsGrid';
-
   export default {
-    components: {
-      CardsGrid
-    },
     data() {
       return {}
     }
