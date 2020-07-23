@@ -1,9 +1,9 @@
 <template>
-    <div class="image-card__header">
-        <div class="image-card__comments" @click="sortImageCards('comments')">
+    <div class="image-card__reaction">
+        <div class="image-reaction__comments" @click="sortImageCards('comments')">
             <i class="far fa-comments fa-lg"></i> {{ comments }}
         </div>
-        <div class="image-card__likes" @click="sortImageCards('likes')">
+        <div class="image-reaction__likes" @click="sortImageCards('likes')">
             <i class="far fa-thumbs-up fa-lg"></i> {{ likes }}
         </div>
     </div>
@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .image-card__header {
+    .image-card__reaction {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;

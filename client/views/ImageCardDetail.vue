@@ -3,8 +3,8 @@
         <div class="image-card">
             <div class="image-card__header">
                 <h1>Image Card ID: {{ this.cardDetail.id }}</h1>
-            
             </div>
+            
             <div class="image-card__body">
                 <div class="card-body__preview">
                     <img :src="this.cardDetail.webformatURL" :width="this.cardDetail.webformatWidth" :height="this.cardDetail.webformatHeight" />

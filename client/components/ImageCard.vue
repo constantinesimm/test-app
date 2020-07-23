@@ -1,21 +1,29 @@
 <template>
     <div class="image-card">
-        <image-card-header :comments="data.comments" :likes="data.likes"/>
-        <image-card-body :url="data.previewURL" />
-        <image-card-footer :tags="data.tags" />
+        <image-card-reaction :comments="data.comments" :likes="data.likes"/>
+        
+        <div class="image-card__preview" @click="showCardDetails(data)">
+            <img :src="data.previewURL" width="300" height="150"/>
+        </div>
+        
+        <image-card-tags :tags="data.tags" />
     </div>
 </template>
 
 <script>
-    import ImageCardHeader from './ImageCardHeader';
-    import ImageCardBody from './ImageCardBody';
-    import ImageCardFooter from './ImageCardFooter';
+    import ImageCardReaction from './ImageCardReaction';
+    import ImageCardTags from './ImageCardTags';
 
     export default {
         name: 'ImageCard',
         props: ['data'],
         components: {
-            ImageCardHeader, ImageCardBody, ImageCardFooter
+            ImageCardReaction, ImageCardTags
+        },
+        methods: {
+            showCardDetails(imageCard) {
+                this.$router.push({ path: '/card/details', query: imageCard });
+            }
         }
     }
 </script>
@@ -27,5 +35,11 @@
         border-radius: 4px;
         border: 1px solid #ebeef5;
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+
+        .image-card__preview {
+            img {
+                cursor: pointer;
+            }
+        }
     }
 </style>

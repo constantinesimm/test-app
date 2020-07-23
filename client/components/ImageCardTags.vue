@@ -1,6 +1,6 @@
 <template>
-    <div class="image-card__footer">
-        <div class="image-card__tag" v-for="tag of tags.split(',')"> 
+    <div class="image-card__tags">
+        <div class="image-tag__info" v-for="tag of tags.split(',')"> 
             {{ tag }}
         </div>
     </div>
@@ -8,21 +8,18 @@
 
 <script>
     export default {
-        data() {
-            return {}
-        },
         props: ['tags']
     }
 </script>
 
 <style lang="scss" scoped>
-    .image-card__footer {
+    .image-card__tags {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         padding: 5px 10px 10px 10px;
 
-        .image-card__tag {
+        .image-tag__info {
             background-color: #ecf5ff;
             display: inline-block;
             height: 32px;
